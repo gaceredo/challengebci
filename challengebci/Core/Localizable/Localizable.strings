@@ -5,6 +5,14 @@
   Created by Gustavo Aceredo on 12/3/23.
   
 */
-"PokemonListView.title" = "Lista de Pokemons";
-"PokemonDetails.title" = "Detalle de Pokemon";
 
+"PokemonListView.title" = "Lista de Pokemons";
+"PokemonListView.urlImage" = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%@.png";
+"PokemonListView.offset" = "offset";
+"PokemonListView.limit" = "limit";
+"PokemonListView.genericErrorTitle" = "Upss....";
+"PokemonListView.genericErrorMessage" = "Hubo algún problema, por favor intente de nuevo.";
+"PokemonListView.titleButtonSuccess" = "Reintentar";
+"PokemonListView.titleButtonCancel" = "Cancelar";
+
+"PokemonDetails.title" = "Detalle de Pokemon";
