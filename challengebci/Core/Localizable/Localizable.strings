@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  challengebci
+
+  Created by Gustavo Aceredo on 12/3/23.
+  
+*/
+"PokemonListView.title" = "Lista de Pokemons";
+"PokemonDetails.title" = "Detalle de Pokemon";
+
