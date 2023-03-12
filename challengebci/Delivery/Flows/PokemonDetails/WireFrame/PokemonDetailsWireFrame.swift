@@ -9,11 +9,11 @@
 import UIKit
 
 protocol PokemonDetailsWireFrameProtocol {
-   static func makePokemonDetailsView() -> UIViewController
+    static func makePokemonDetailsView(id: Int) -> UIViewController
 }
 
 struct PokemonDetailsWireFrame: PokemonDetailsWireFrameProtocol {
-    static func makePokemonDetailsView() -> UIViewController {
+    static func makePokemonDetailsView(id: Int) -> UIViewController {
         
         let interactorDependencies = PokemonDetailsInteractorDependencies()
         let interactor = PokemonDetailsInteractor(dependencies: interactorDependencies)
