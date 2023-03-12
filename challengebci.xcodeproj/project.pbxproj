@@ -25,6 +25,13 @@
 		04A04FA329BE18BF004F6E4B /* UITableView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FA229BE18BF004F6E4B /* UITableView+Style.swift */; };
 		04A04FA529BE18E5004F6E4B /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FA429BE18E5004F6E4B /* ReusableCell.swift */; };
 		04A04FA729BE18F0004F6E4B /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FA629BE18F0004F6E4B /* ConfigurableCell.swift */; };
+		04A04FAC29BE1C78004F6E4B /* ResponseHandlingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FAB29BE1C78004F6E4B /* ResponseHandlingError.swift */; };
+		04A04FAE29BE1C81004F6E4B /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FAD29BE1C81004F6E4B /* ResponseError.swift */; };
+		04A04FB029BE1CA4004F6E4B /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FAF29BE1CA4004F6E4B /* RequestMethod.swift */; };
+		04A04FB229BE1CAF004F6E4B /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FB129BE1CAF004F6E4B /* RequestProtocol.swift */; };
+		04A04FB429BE1CE4004F6E4B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FB329BE1CE4004F6E4B /* Endpoint.swift */; };
+		04A04FB629BE1CEE004F6E4B /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FB529BE1CEE004F6E4B /* Feed.swift */; };
+		04A04FB829BE1D2E004F6E4B /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A04FB729BE1D2E004F6E4B /* AppEnvironment.swift */; };
 		91100A4743E963267B1AE532 /* Pods_challengebci.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46E7C1F21B63C117527912E /* Pods_challengebci.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +75,13 @@
 		04A04FA229BE18BF004F6E4B /* UITableView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Style.swift"; sourceTree = "<group>"; };
 		04A04FA429BE18E5004F6E4B /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		04A04FA629BE18F0004F6E4B /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		04A04FAB29BE1C78004F6E4B /* ResponseHandlingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandlingError.swift; sourceTree = "<group>"; };
+		04A04FAD29BE1C81004F6E4B /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		04A04FAF29BE1CA4004F6E4B /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		04A04FB129BE1CAF004F6E4B /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		04A04FB329BE1CE4004F6E4B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		04A04FB529BE1CEE004F6E4B /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		04A04FB729BE1D2E004F6E4B /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		638755E39D43C7AD3DDBBE41 /* Pods-challengebci.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengebci.release.xcconfig"; path = "Target Support Files/Pods-challengebci/Pods-challengebci.release.xcconfig"; sourceTree = "<group>"; };
 		8138AC6E9A51DF414475CD80 /* Pods-challengebci.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengebci.debug.xcconfig"; path = "Target Support Files/Pods-challengebci/Pods-challengebci.debug.xcconfig"; sourceTree = "<group>"; };
 		F46E7C1F21B63C117527912E /* Pods_challengebci.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengebci.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				04A04F8E29BE0BAF004F6E4B /* NetworkingService */,
-				04A04F8D29BE0BA7004F6E4B /* Parameters */,
 			);
 			path = Infraestructure;
 			sourceTree = "<group>";
@@ -265,16 +278,13 @@
 			path = Delivery;
 			sourceTree = "<group>";
 		};
-		04A04F8D29BE0BA7004F6E4B /* Parameters */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Parameters;
-			sourceTree = "<group>";
-		};
 		04A04F8E29BE0BAF004F6E4B /* NetworkingService */ = {
 			isa = PBXGroup;
 			children = (
+				04A04FA929BE1C55004F6E4B /* Error */,
+				04A04FA829BE1C4D004F6E4B /* Request */,
+				04A04FB329BE1CE4004F6E4B /* Endpoint.swift */,
+				04A04FB529BE1CEE004F6E4B /* Feed.swift */,
 			);
 			path = NetworkingService;
 			sourceTree = "<group>";
@@ -289,6 +299,7 @@
 		04A04F9029BE1594004F6E4B /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				04A04FB729BE1D2E004F6E4B /* AppEnvironment.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -328,6 +339,24 @@
 			children = (
 			);
 			path = PokemonDetails;
+			sourceTree = "<group>";
+		};
+		04A04FA829BE1C4D004F6E4B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				04A04FAF29BE1CA4004F6E4B /* RequestMethod.swift */,
+				04A04FB129BE1CAF004F6E4B /* RequestProtocol.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		04A04FA929BE1C55004F6E4B /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				04A04FAB29BE1C78004F6E4B /* ResponseHandlingError.swift */,
+				04A04FAD29BE1C81004F6E4B /* ResponseError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		5F99876ED982AC508E7D809A /* Frameworks */ = {
@@ -514,17 +543,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A04F5729BE08C8004F6E4B /* ViewController.swift in Sources */,
+				04A04FB629BE1CEE004F6E4B /* Feed.swift in Sources */,
 				04A04F5329BE08C8004F6E4B /* AppDelegate.swift in Sources */,
 				04A04F9B29BE1867004F6E4B /* UIImageView+Style.swift in Sources */,
 				04A04FA329BE18BF004F6E4B /* UITableView+Style.swift in Sources */,
+				04A04FB829BE1D2E004F6E4B /* AppEnvironment.swift in Sources */,
 				04A04FA529BE18E5004F6E4B /* ReusableCell.swift in Sources */,
 				04A04F9929BE184E004F6E4B /* UICollectionView+Register.swift in Sources */,
 				04A04FA729BE18F0004F6E4B /* ConfigurableCell.swift in Sources */,
 				04A04F9729BE1835004F6E4B /* Error+extension.swift in Sources */,
+				04A04FAC29BE1C78004F6E4B /* ResponseHandlingError.swift in Sources */,
 				04A04FA129BE18B2004F6E4B /* UITableViewCell+Register.swift in Sources */,
 				04A04F9D29BE187A004F6E4B /* ReusableView.swift in Sources */,
+				04A04FB229BE1CAF004F6E4B /* RequestProtocol.swift in Sources */,
 				04A04F9F29BE1898004F6E4B /* UIViewController+HUD.swift in Sources */,
 				04A04F5529BE08C8004F6E4B /* SceneDelegate.swift in Sources */,
+				04A04FB029BE1CA4004F6E4B /* RequestMethod.swift in Sources */,
+				04A04FB429BE1CE4004F6E4B /* Endpoint.swift in Sources */,
+				04A04FAE29BE1C81004F6E4B /* ResponseError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
