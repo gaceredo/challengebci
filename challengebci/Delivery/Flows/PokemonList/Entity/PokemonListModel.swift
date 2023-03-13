@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct PokemonListModel: Decodable {
-    let count: Int
-    let next: String?
-    let results: [PokemonListModelResult]
+class PokemonListModel:Object, Decodable {
+    @objc dynamic var count: Int = 0
+    @objc dynamic var next: String = ""
+    var results = List<PokemonListModelResult>()
 
     enum CodingKeys: String, CodingKey {
         case count
@@ -19,13 +20,14 @@ struct PokemonListModel: Decodable {
     }
 }
 
-struct PokemonListModelResult: Decodable {
-    let name: String
-    var url: String
-    var id: Int = 0
+class PokemonListModelResult:Object, Decodable {
+    @objc dynamic var name: String = ""
+    @objc dynamic var url: String
+    @objc dynamic var id: Int = 0
     
     enum CodingKeys: String, CodingKey {
         case name
         case url
     }
+    
 }

@@ -40,8 +40,8 @@ final class PokemonListPresenter: PokemonListPresenterProtocol {
             }
             switch result {
             case .success(let element):
-                self.pokemonList = element.results
-                self.filterPokemonList = element.results
+                self.pokemonList = element.results.compactMap { $0 }
+                self.filterPokemonList = element.results.compactMap { $0 }
                 self.updateUrlDownloadImage()
                 completion(true)
             case .failure(let error):

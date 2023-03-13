@@ -1,24 +1,34 @@
 PODS:
   - Kingfisher (7.4.1)
   - MBProgressHUD (1.2.0)
+  - Realm (3.19.1):
+    - Realm/Headers (= 3.19.1)
+  - Realm/Headers (3.19.1)
+  - RealmSwift (3.19.1):
+    - Realm (= 3.19.1)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Kingfisher
   - MBProgressHUD
+  - RealmSwift (~> 3.19.0)
   - SwiftyJSON
 
 SPEC REPOS:
   trunk:
     - Kingfisher
     - MBProgressHUD
+    - Realm
+    - RealmSwift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  Realm: fb377747e694c7deb62d402400454134fe321bee
+  RealmSwift: 1302b0ab60f3105a2b214a735eeb0938607cf16b
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 2a6d655ac583058b629f066021f3b6c489197785
+PODFILE CHECKSUM: 11b62b9141060b9b9284c36f0fccdac44fd5415c
 
 COCOAPODS: 1.11.3
