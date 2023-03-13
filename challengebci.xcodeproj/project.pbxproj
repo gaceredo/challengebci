@@ -59,6 +59,8 @@
 		04A0500029BE9B70004F6E4B /* PokemonDetailsProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A04FFA29BE9B70004F6E4B /* PokemonDetailsProfileCell.xib */; };
 		04A0500629BEA8A2004F6E4B /* PokemonDetailsViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0500529BEA8A2004F6E4B /* PokemonDetailsViewController+Delegate.swift */; };
 		04A0500829BEBAD3004F6E4B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0500729BEBAD2004F6E4B /* UIViewController+Extension.swift */; };
+		04A0500B29BEBEE4004F6E4B /* RealmSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0500A29BEBEE4004F6E4B /* RealmSwift+Extension.swift */; };
+		04A0500E29BEC0BE004F6E4B /* RealmMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0500D29BEC0BE004F6E4B /* RealmMigration.swift */; };
 		91100A4743E963267B1AE532 /* Pods_challengebci.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46E7C1F21B63C117527912E /* Pods_challengebci.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,8 @@
 		04A04FFA29BE9B70004F6E4B /* PokemonDetailsProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PokemonDetailsProfileCell.xib; sourceTree = "<group>"; };
 		04A0500529BEA8A2004F6E4B /* PokemonDetailsViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PokemonDetailsViewController+Delegate.swift"; sourceTree = "<group>"; };
 		04A0500729BEBAD2004F6E4B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		04A0500A29BEBEE4004F6E4B /* RealmSwift+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmSwift+Extension.swift"; sourceTree = "<group>"; };
+		04A0500D29BEC0BE004F6E4B /* RealmMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigration.swift; sourceTree = "<group>"; };
 		638755E39D43C7AD3DDBBE41 /* Pods-challengebci.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengebci.release.xcconfig"; path = "Target Support Files/Pods-challengebci/Pods-challengebci.release.xcconfig"; sourceTree = "<group>"; };
 		8138AC6E9A51DF414475CD80 /* Pods-challengebci.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengebci.debug.xcconfig"; path = "Target Support Files/Pods-challengebci/Pods-challengebci.debug.xcconfig"; sourceTree = "<group>"; };
 		F46E7C1F21B63C117527912E /* Pods_challengebci.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challengebci.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +238,7 @@
 		04A04F8229BE0AFA004F6E4B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				04A0500929BEBED6004F6E4B /* RealmSwift */,
 				04A04F8929BE0B40004F6E4B /* UITableViewCell */,
 				04A04F8829BE0B2F004F6E4B /* UITableView */,
 				04A04F8729BE0B26004F6E4B /* UIViewController */,
@@ -315,6 +320,7 @@
 		04A04F8B29BE0B66004F6E4B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				04A0500C29BEC0B4004F6E4B /* Realm */,
 				04A04F9129BE17D3004F6E4B /* Localizable */,
 				04A04F9029BE1594004F6E4B /* Environment */,
 				04A04F8F29BE158C004F6E4B /* BaseClasses */,
@@ -536,6 +542,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		04A0500929BEBED6004F6E4B /* RealmSwift */ = {
+			isa = PBXGroup;
+			children = (
+				04A0500A29BEBEE4004F6E4B /* RealmSwift+Extension.swift */,
+			);
+			path = RealmSwift;
+			sourceTree = "<group>";
+		};
+		04A0500C29BEC0B4004F6E4B /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				04A0500D29BEC0BE004F6E4B /* RealmMigration.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		5F99876ED982AC508E7D809A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +760,7 @@
 				04A0500629BEA8A2004F6E4B /* PokemonDetailsViewController+Delegate.swift in Sources */,
 				04A04FBA29BE223C004F6E4B /* BaseViewController.swift in Sources */,
 				04A04FBE29BE226E004F6E4B /* LocalizableString.swift in Sources */,
+				04A0500B29BEBEE4004F6E4B /* RealmSwift+Extension.swift in Sources */,
 				04A04FB829BE1D2E004F6E4B /* AppEnvironment.swift in Sources */,
 				04A04FA529BE18E5004F6E4B /* ReusableCell.swift in Sources */,
 				04A04F9929BE184E004F6E4B /* UICollectionView+Register.swift in Sources */,
@@ -754,6 +777,7 @@
 				04A04FDD29BE2828004F6E4B /* PokemonDetailsWireFrame.swift in Sources */,
 				04A04FEF29BE2F0D004F6E4B /* PokemonListViewController+Delegate.swift in Sources */,
 				04A04FFD29BE9B70004F6E4B /* PokemonDetailsHeaderCell.swift in Sources */,
+				04A0500E29BEC0BE004F6E4B /* RealmMigration.swift in Sources */,
 				04A04FB229BE1CAF004F6E4B /* RequestProtocol.swift in Sources */,
 				04A04FE429BE2A9F004F6E4B /* PokemonListModel.swift in Sources */,
 				04A04FC829BE25C8004F6E4B /* PokemonListPresenter.swift in Sources */,
@@ -935,6 +959,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FTAB759QBD;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = challengebci/Info.plist;
 				INFOPLIST_KEY_NSMainNibFile = PokemonListViewController;
@@ -964,6 +989,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FTAB759QBD;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = challengebci/Info.plist;
 				INFOPLIST_KEY_NSMainNibFile = PokemonListViewController;

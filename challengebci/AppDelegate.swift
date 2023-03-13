@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,21 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupAppearance()
+        setUpRealm()
         return true
-    }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
     func setupAppearance() {
@@ -43,3 +31,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+/// Set up Realm default configuration.
+extension AppDelegate {
+    
+    private func setUpRealm() {
+        let nukeDBSchemaVersion: UInt64 = RealmMigration().nukeDBSchemaVersion
+
+        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+        do {
+            let version = try schemaVersionAtURL(realmURL)
+            if version < nukeDBSchemaVersion {
+                deleteRealmFile(realmURL: realmURL)
+            }
+        } catch {}
+
+        Realm.Configuration.defaultConfiguration = RealmMigration().configuration
+    }
+    
+    private func deleteRealmFile(realmURL: URL) {
+        let realmURLs = [realmURL]
+
+        for URL in realmURLs {
+            do {
+                try FileManager.default.removeItem(at: URL)
+            } catch {
+                print(error)
+            }
+        }
+    }
+}
