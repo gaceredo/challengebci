@@ -27,6 +27,7 @@ class PokemonMenuViewController: BaseViewController {
         super.viewDidLoad()
         pokemonDetails()
         setupView()
+        getTitle() 
     }
     
     func pokemonDetails() {
@@ -38,10 +39,14 @@ class PokemonMenuViewController: BaseViewController {
         })
     }
     private func setupView() {
-        title = Localizable.PokemonDetails.title.localized
+       
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerNib(PokemonMenuCell.self)
+    }
+    func getTitle() {
+        let text = NSLocalizedString(Localizable.PokemonMenu.title.localized, comment: "")
+        title = String.localizedStringWithFormat(text, "\(presenter.category)")
     }
 }
 

@@ -24,3 +24,5 @@
 "PokemonDetails.statistics" = "Estadística";
 "PokemonDetails.skills" = "Habilidades";
 "PokemonDetails.url" = "deeplink:";
+
+"PokemonMenu.title" = "Menu %@";

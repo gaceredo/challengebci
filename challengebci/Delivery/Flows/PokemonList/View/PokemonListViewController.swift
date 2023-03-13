@@ -56,7 +56,9 @@ class PokemonListViewController: BaseViewController {
             self.setMoreButton(data: menuItems,
                                completion: { [weak self] action in
                 guard let self = self else { return }
-                let vc = PokemonMenuWireFrame.makePokemonMenuView(url: action.identifier.rawValue)
+                
+                let vc = PokemonMenuWireFrame.makePokemonMenuView(url: action.identifier.rawValue,
+                                                                  category: action.title)
                 self.navigationController?.pushViewController(vc, animated: true)
             })
         }
