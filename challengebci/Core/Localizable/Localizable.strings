@@ -16,3 +16,10 @@
 "PokemonListView.titleButtonCancel" = "Cancelar";
 
 "PokemonDetails.title" = "Detalle de Pokemon";
+"PokemonDetails.name" = "Nombre:";
+"PokemonDetails.order" = "Orden:";
+"PokemonDetails.height" = "Altura:";
+"PokemonDetails.experience" = "Experiencia:";
+"PokemonDetails.slot" = "Slot";
+"PokemonDetails.statistics" = "Estadística";
+"PokemonDetails.skills" = "Habilidades";

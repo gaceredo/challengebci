@@ -24,5 +24,12 @@ enum Localizable {
     enum PokemonDetails: String, LocalizableString {
         var screen: String { "PokemonDetails" }
         case title
+        case name
+        case order
+        case height
+        case experience
+        case slot
+        case statistics
+        case skills
     }
 }

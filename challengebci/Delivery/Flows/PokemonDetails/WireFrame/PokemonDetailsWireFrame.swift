@@ -17,7 +17,7 @@ struct PokemonDetailsWireFrame: PokemonDetailsWireFrameProtocol {
         
         let interactorDependencies = PokemonDetailsInteractorDependencies()
         let interactor = PokemonDetailsInteractor(dependencies: interactorDependencies)
-        let presenter = PokemonDetailsPresenter(interactor: interactor)
+        let presenter = PokemonDetailsPresenter(interactor: interactor, pokemonId: id)
         let view = PokemonDetailsViewController(presenter: presenter)
         
         return view
