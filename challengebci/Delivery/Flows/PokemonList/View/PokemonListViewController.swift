@@ -41,7 +41,9 @@ class PokemonListViewController: BaseViewController {
                 if isSuccess {
                     self.collectionView.reloadData()
                 } else {
-                   // show error
+                    self.showError(handler: { [weak self] _ in
+                        self?.pokemonList()
+                    })
                 }
                 self.hideHud()
             })
