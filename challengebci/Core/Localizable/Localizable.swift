@@ -31,5 +31,6 @@ enum Localizable {
         case slot
         case statistics
         case skills
+        case url
     }
 }

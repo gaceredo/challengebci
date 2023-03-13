@@ -11,6 +11,7 @@ import Combine
 
 protocol PokemonListInteractorDependenciesProtocol {
     func pokemonList(query: [URLQueryItem],_ feedKind: Feed) -> AnyPublisher<PokemonListModel, Error>
+    func menuOptions(query: [URLQueryItem],_ feedKind: Feed) -> AnyPublisher<PokemonMenuModel, Error>
 }
 
 class PokemonListInteractorDependencies: RequestProtocol, PokemonListInteractorDependenciesProtocol {
@@ -30,6 +31,9 @@ class PokemonListInteractorDependencies: RequestProtocol, PokemonListInteractorD
 
     func pokemonList(query: [URLQueryItem],_ feedKind: Feed) -> AnyPublisher< PokemonListModel, Error> {
         execute(feedKind.request(query: query), decodingType: PokemonListModel.self)
+    }
+    func menuOptions(query: [URLQueryItem],_ feedKind: Feed) -> AnyPublisher<PokemonMenuModel, Error> {
+        execute(feedKind.request(query: query), decodingType: PokemonMenuModel.self)
     }
 }
 

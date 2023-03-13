@@ -11,6 +11,7 @@ import Combine
 
 protocol PokemonListPresenterProtocol {
     var pokemonList: [PokemonListModelResult] { get set }
+    var menuItems: PokemonMenuModel? {get set}
     var localizedDescription: String { get set }
     func pokemonList(completion: @escaping (Bool) -> Void)
 }
@@ -19,6 +20,8 @@ final class PokemonListPresenter: PokemonListPresenterProtocol {
     
     var pokemonList: [PokemonListModelResult] = []
     var filterPokemonList: [PokemonListModelResult] = []
+    var menuItems: PokemonMenuModel?
+    
     var localizedDescription: String = ""
     private var offset: Int = 0
     private var limit: Int = 150
@@ -46,6 +49,19 @@ final class PokemonListPresenter: PokemonListPresenterProtocol {
                 completion(true)
             case .failure(let error):
                 self.localizedDescription = error.localizedDescription
+                completion(false)
+            }
+        }
+    }
+
+    func menuOptions(completion: @escaping (Bool) -> Void)  {
+        interactor.menuOptions(query: []) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let element):
+                self.menuItems = element
+                completion(true)
+            case .failure:
                 completion(false)
             }
         }

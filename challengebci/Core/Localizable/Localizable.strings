@@ -23,3 +23,4 @@
 "PokemonDetails.slot" = "Slot";
 "PokemonDetails.statistics" = "Estadística";
 "PokemonDetails.skills" = "Habilidades";
+"PokemonDetails.url" = "deeplink:";

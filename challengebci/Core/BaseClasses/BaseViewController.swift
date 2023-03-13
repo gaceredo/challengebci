@@ -36,4 +36,21 @@ class BaseViewController: UIViewController {
                        titleButtonCancel: Localizable.PokemonListView.titleButtonCancel.localized,
                        handler: handler)
     }
+    
+    func setMoreButton(data: Dictionary<String, String>,
+                       completion: @escaping (UIAction) -> Void) {
+        var actions: [UIAction] = []
+        
+        data.forEach {
+            let action = UIAction(title: $0.key, identifier: .init($0.value), handler: { action in
+                completion(action)
+            })
+            actions.append(action)
+        }
+        let menu = UIMenu(title: "", children: actions)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: nil,
+                                                           image: UIImage(systemName: "ellipsis"),
+                                                           primaryAction: nil, menu: menu)
+        navigationItem.leftBarButtonItem?.tintColor = .black
+    }
 }
