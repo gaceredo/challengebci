@@ -33,4 +33,8 @@ enum Localizable {
         case skills
         case url
     }
+    enum PokemonMenu: String, LocalizableString {
+        var screen: String { "PokemonMenu" }
+        case title
+    }
 }

@@ -17,11 +17,14 @@ final class PokemonMenuPresenter: PokemonMenuPresenterProtocol, ObservableObject
     
     var results: [PokemonMenuDetailsResult] = []
     var url: String
+    var category: String
     private let interactor: PokemonMenuInteractorProtocol
     
     init(url: String,
+         category: String,
          interactor: PokemonMenuInteractorProtocol) {
         self.url = url
+        self.category = category
         self.interactor = interactor
     }
     
