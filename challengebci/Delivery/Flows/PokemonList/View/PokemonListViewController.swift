@@ -34,18 +34,30 @@ class PokemonListViewController: BaseViewController {
     }
     
     func pokemonList() {
-        self.showHud()
-        DispatchQueue.main.async {
-            self.presenter.pokemonList(completion: {[weak self] isSuccess in
+        showHud()
+        presenter.pokemonList(completion: {[weak self] isSuccess in
+            guard let self = self else { return }
+            if isSuccess {
+                self.collectionView.reloadData()
+                self.menuOptions()
+            } else {
+                self.showError(handler: { [weak self] _ in
+                    self?.pokemonList()
+                })
+            }
+            self.hideHud()
+        })
+    }
+    
+    func menuOptions() {
+        self.presenter.menuOptions {[weak self] _ in
+            guard let self = self else { return }
+            let menuItems = self.presenter.menuItems?.convertIntoDict() ?? [:]
+            self.setMoreButton(data: menuItems,
+                               completion: { [weak self] action in
                 guard let self = self else { return }
-                if isSuccess {
-                    self.collectionView.reloadData()
-                } else {
-                    self.showError(handler: { [weak self] _ in
-                        self?.pokemonList()
-                    })
-                }
-                self.hideHud()
+                let vc = PokemonMenuWireFrame.makePokemonMenuView(url: action.identifier.rawValue)
+                self.navigationController?.pushViewController(vc, animated: true)
             })
         }
     }
