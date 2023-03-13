@@ -27,10 +27,10 @@ class PokemonDetailsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        setupView()
         pokemonDetails()
     }
-    
+
     private func pokemonDetails() {
         showHud()
         presenter.pokemonDetails(completion: { [weak self] isSuccess in
@@ -46,7 +46,8 @@ class PokemonDetailsViewController: BaseViewController {
         })
     }
     
-    private func setupTableView() {
+    private func setupView() {
+        title = Localizable.PokemonDetails.title.localized
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerNib(PokemonDetailsProfileCell.self)

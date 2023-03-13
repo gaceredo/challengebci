@@ -34,8 +34,8 @@ class PokemonListViewController: BaseViewController {
     }
     
     func pokemonList() {
+        self.showHud()
         DispatchQueue.main.async {
-            self.showHud()
             self.presenter.pokemonList(completion: {[weak self] isSuccess in
                 guard let self = self else { return }
                 if isSuccess {

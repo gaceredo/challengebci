@@ -31,7 +31,7 @@ class PokemonDetailsProfileCell: UITableViewCell, ConfigurableCell {
         self.namePokemon.text = "\(Localizable.PokemonDetails.name.localized) \(data.name)"
         self.orderPokemon.text = "\(Localizable.PokemonDetails.order.localized) \(data.order)"
         self.heightPokemon.text = "\(Localizable.PokemonDetails.height.localized) \(data.height)"
-        self.experiencePokemon.text = "\(Localizable.PokemonDetails.experience.localized) \(data.base_experience)"
+        self.experiencePokemon.text = "\(Localizable.PokemonDetails.experience.localized) \(data.baseExperience)"
         self.downloadImage(id: data.id)
     }
     

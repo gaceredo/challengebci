@@ -29,7 +29,7 @@ extension PokemonDetailsViewController: UITableViewDelegate, UITableViewDataSour
                 allStats.count - 1 > statIndex ? (statIndex += 1) : (statIndex = 0)
                 cell.configure(cell: .stats)
                 cell.backgroundColor = statIndex % 2 == 0 ? .systemGray6 : .white
-                cell.configure(data: PokemonDetailsGenericData(name: stat.stat.name, baseStat: stat.base_stat))
+                cell.configure(data: PokemonDetailsGenericData(name: stat.stat.name, baseStat: stat.baseStat))
             }
             return cell
         case .abilities:

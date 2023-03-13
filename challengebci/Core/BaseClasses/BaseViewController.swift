@@ -12,6 +12,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resetNextControllerBackButtonTitle()
     }
     
     func showAlert(title: String,
