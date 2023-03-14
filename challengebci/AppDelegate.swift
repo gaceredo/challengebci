@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setupAppearance() {
         let appearance = UINavigationBarAppearance()
+        let image = UIImage(named: "back-arrow-new")
         appearance.backgroundColor = .white
-        appearance.setBackIndicatorImage(UIImage(named: "back-arrow-new"),
-                                         transitionMaskImage: UIImage(named: "back-arrow-new"))
+        appearance.setBackIndicatorImage(image, transitionMaskImage: image)
         appearance.shadowColor = .clear
         appearance.shadowImage = UIImage()
         UINavigationBar.appearance().standardAppearance = appearance

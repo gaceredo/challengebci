@@ -36,12 +36,3 @@ class PokemonDetailsGenericCell: UITableViewCell, ConfigurableCell {
     }
 }
 
-struct PokemonDetailsGenericData {
-    let name: String
-    let baseStat: Int
-}
-
-enum PokemonDetailsTypeCell {
-    case stats
-    case abilities
-}

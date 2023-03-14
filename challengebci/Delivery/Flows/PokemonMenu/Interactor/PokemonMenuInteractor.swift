@@ -12,14 +12,13 @@ import Combine
 protocol PokemonMenuInteractorProtocol {
     func pokemonMenu(url: String, query: [URLQueryItem],
                      completion: @escaping (Result<PokemonMenuDetails, Error>) -> Void)
-
 }
 
 final class PokemonMenuInteractor: PokemonMenuInteractorProtocol {
-
+    
     private let dependencies: PokemonMenuInteractorDependenciesProtocol
     private var cancellable: AnyCancellable?
-
+    
     init(dependencies: PokemonMenuInteractorDependenciesProtocol) {
         self.dependencies = dependencies
     }
@@ -36,7 +35,7 @@ final class PokemonMenuInteractor: PokemonMenuInteractorProtocol {
                     completion(.failure(error))
                 }
             },
-            receiveValue: {
+                  receiveValue: {
                 completion(.success($0))
             })
     }
