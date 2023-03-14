@@ -30,9 +30,7 @@ final class PokemonMenuPresenter: PokemonMenuPresenterProtocol, ObservableObject
     
     func pokemonDetails(completion: @escaping (Bool) -> Void) {
         interactor.pokemonMenu(url: url, query: []) { [weak self] result in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             switch result {
             case .success(let element):
                 self.results = element.results

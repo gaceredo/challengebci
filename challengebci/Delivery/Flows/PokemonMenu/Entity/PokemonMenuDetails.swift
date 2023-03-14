@@ -7,7 +7,6 @@
 
 import Foundation
 
-// MARK: - PokemonMenuDetails
 struct PokemonMenuDetails: Decodable {
     let results: [PokemonMenuDetailsResult]
 
@@ -16,7 +15,6 @@ struct PokemonMenuDetails: Decodable {
     }
 }
 
-// MARK: - Result
 struct PokemonMenuDetailsResult: Decodable {
     let name: String?
     let url: String

@@ -19,6 +19,7 @@ class PokemonMenuCell: UITableViewCell, ConfigurableCell {
         self.nameTitle.text = Localizable.PokemonDetails.name.localized
         self.urlTitle.text = Localizable.PokemonDetails.url.localized
     }
+    
     func configure(data: PokemonMenuDetailsResult) {
         self.nameValue.text = data.name
         self.urlValue.text = data.url
