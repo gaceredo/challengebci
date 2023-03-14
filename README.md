@@ -50,9 +50,8 @@ The project has the following dependencies
 - Kingfisher
 - MBProgressHUD
 - RealmSwift
+-KIF
 
-> Important!
-> The snapshots was saved using the iPhone 14 Pro device.
 
 ### Screens
 
