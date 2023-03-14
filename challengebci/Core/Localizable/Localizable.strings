@@ -14,6 +14,8 @@
 "PokemonListView.genericErrorMessage" = "Hubo algún problema, por favor intente de nuevo.";
 "PokemonListView.titleButtonSuccess" = "Reintentar";
 "PokemonListView.titleButtonCancel" = "Cancelar";
+"PokemonListView.collectionView" = "collectionView";
+"PokemonListView.search" = "search";
 
 "PokemonDetails.title" = "Detalle de Pokemon";
 "PokemonDetails.name" = "Nombre:";
