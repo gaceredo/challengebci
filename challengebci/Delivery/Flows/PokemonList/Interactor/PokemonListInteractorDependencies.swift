@@ -9,11 +9,6 @@
 import Foundation
 import Combine
 
-protocol PokemonListInteractorDependenciesProtocol {
-    func pokemonList(query: [URLQueryItem],_ feedKind: Feed) -> AnyPublisher<PokemonListModel, Error>
-    func menuOptions(query: [URLQueryItem],_ feedKind: Feed) -> AnyPublisher<PokemonMenuModel, Error>
-}
-
 class PokemonListInteractorDependencies: RequestProtocol, PokemonListInteractorDependenciesProtocol {
     
     var session: URLSession
