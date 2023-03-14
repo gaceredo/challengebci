@@ -19,6 +19,8 @@ enum Localizable {
         case genericErrorMessage
         case titleButtonSuccess
         case titleButtonCancel
+        case collectionView
+        case search
     }
     
     enum PokemonDetails: String, LocalizableString {

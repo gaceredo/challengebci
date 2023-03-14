@@ -74,6 +74,13 @@ class PokemonListViewController: BaseViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerNib(PokemonListCell.self)
+        configureKIF()
+    }
+    
+    func configureKIF() {
+        collectionView.accessibilityIdentifier = Localizable.PokemonListView.collectionView.localized
+        collectionView.accessibilityLabel = Localizable.PokemonListView.collectionView.localized
+              
     }
     
     func configureSearchBar() {
@@ -85,12 +92,15 @@ class PokemonListViewController: BaseViewController {
         searchBar.tintColor = .black
         navigationItem.rightBarButtonItem = nil
         navigationItem.titleView = searchBar
+        searchBar.isAccessibilityElement = true
+       
     }
     
     func configureSearchBarButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,
                                                             target: self, action: #selector(showSearchBar))
         navigationItem.rightBarButtonItem?.tintColor = .black
+        navigationItem.rightBarButtonItem?.accessibilityLabel = Localizable.PokemonListView.search.localized
     }
     
     @objc func showSearchBar() {

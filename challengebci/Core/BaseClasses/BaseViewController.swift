@@ -52,5 +52,6 @@ class BaseViewController: UIViewController {
                                                            image: UIImage(systemName: "ellipsis"),
                                                            primaryAction: nil, menu: menu)
         navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.accessibilityLabel = "menu"
     }
 }
